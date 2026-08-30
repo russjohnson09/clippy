@@ -156,5 +156,18 @@ pi --mode json "Your prompt"
 
 
 
-
+https://omp.sh/
 irm https://omp.sh/install.ps1 | iex
+
+
+omp
+
+
+https://github.com/ollama/ollama/blob/main/docs/api.md
+
+
+
+https://github.com/bradAGI/awesome-cli-coding-agents
+
+
+https://github.com/AtomicBot-ai/atomic-agent
