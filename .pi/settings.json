@@ -1,0 +1,7 @@
+{
+  "packages": [],
+  "lastChangelogVersion": "0.84.4",
+  "theme": "dark",
+  "defaultProvider": "test234",
+  "defaultModel": "Qwen/Qwen2.5-Coder-7B-Instruct-GGUF:Q3_K_M"
+}

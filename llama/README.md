@@ -93,6 +93,7 @@ C:\Users\russj\.pi\agent\settings.json
 
 ```
 
+https://pi.dev/docs/latest/models
 
 C:\Users\russj\.pi\agent\models.json
  ```
@@ -109,3 +110,25 @@ C:\Users\russj\.pi\agent\models.json
   }
 }
 ```
+
+
+```
+pi --mode json
+```
+
+
+{
+  "providers": {
+    "test": {
+      "baseUrl": "http://localhost:8081/v1",
+      "api": "openai-completions",
+      "apiKey": "ollama",
+      "models": [
+        { "id": "Qwen/Qwen2.5-Coder-7B-Instruct-GGUF:Q3_K_M" }
+      ]
+    }
+  }
+}
+
+
+http://localhost:8081/v1/models
