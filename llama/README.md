@@ -132,3 +132,29 @@ pi --mode json
 
 
 http://localhost:8081/v1/models
+
+
+
+
+https://www.youtube.com/watch?v=XhliUzOmSa8
+
+oh my pi
+
+
+
+pi install npm:pi-permission-system
+
+
+
+```
+pi --mode json "Your prompt"
+```
+
+
+
+[/installation#windows](https://pt-act-pi-mono.mintlify.app/installation#windows)
+
+
+
+
+irm https://omp.sh/install.ps1 | iex
