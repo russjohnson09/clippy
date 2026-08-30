@@ -5,8 +5,7 @@ https://github.com/ggml-org/llama.cpp/blob/master/docs/docker.md
 
 
 https://llama.app/
-irm https://llama.app/install.ps1 | iex
-llama serve --port 8081 --host 127.0.0.1
+
 
 
 http://127.0.0.1:8081/
@@ -42,3 +41,71 @@ pi install git:github.com/huggingface/pi-llama
 ````
 
 
+
+```
+nvm use 24
+npm install -g --ignore-scripts @earendil-works/pi-coding-agent
+pi install git:github.com/huggingface/pi-llama
+```
+
+
+```
+irm https://llama.app/install.ps1 | iex
+llama serve --port 8080 --host 127.0.0.1
+
+http://127.0.0.1:8080/
+```
+llama serve --port 8081 --host 0.0.0.0
+
+
+```
+ pi -p "hello"
+pi
+```
+
+
+
+https://github.com/earendil-works/pi/issues/6922
+
+
+
+ pi -p "hello"
+
+
+
+ https://pi.dev/docs/latest/models
+
+
+
+ ```
+ pi uninstall git:github.com/huggingface/pi-llama
+ ```
+
+
+
+C:\Users\russj\.pi\agent\settings.json
+```{
+  "packages": [],
+  "lastChangelogVersion": "0.84.4",
+  "theme": "dark",
+  "defaultProvider": "test"
+}
+
+```
+
+
+C:\Users\russj\.pi\agent\models.json
+ ```
+ {
+  "providers": {
+    "test": {
+      "baseUrl": "http://localhost:8081/v1",
+      "api": "openai-completions",
+      "apiKey": "ollama",
+      "models": [
+        { "id": "Qwen/Qwen2.5-Coder-7B-Instruct-GGUF:Q3_K_M" }
+      ]
+    }
+  }
+}
+```

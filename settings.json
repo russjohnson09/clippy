@@ -1,0 +1,5 @@
+{
+  "defaultProvider": "llama.cpp",
+  "defaultModel": "default",
+  "defaultThinkingLevel": "high"
+}
