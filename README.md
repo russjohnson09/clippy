@@ -81,3 +81,13 @@ https://docs.getbifrost.ai/providers/supported-providers/vllm
 
 
          https://docs.vllm.ai/en/latest/getting_started/quickstart/
+
+
+
+         https://huggingface.co/docs/hub/gguf
+
+
+         https://github.com/huggingface/text-generation-inference
+
+
+https://docs.sglang.io/docs/basic_usage/send_request
