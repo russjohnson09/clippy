@@ -77,3 +77,7 @@ https://docs.getbifrost.ai/providers/supported-providers/vllm
 
 
          vllm serve unsloth/gpt-oss-120b
+
+
+
+         https://docs.vllm.ai/en/latest/getting_started/quickstart/
