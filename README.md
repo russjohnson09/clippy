@@ -64,3 +64,16 @@ https://docs.getbifrost.ai/providers/supported-providers/vllm
          If the cache and target directories are on different filesystems, hardlinking may not be supported.
          If this is intentional, set `export UV_LINK_MODE=copy` or use `--link-mode=copy` to suppress this warning.
          ```
+
+
+
+         NVIDIA GeForce RTX 3050
+
+
+
+
+         uv pip install -U vllm --torch-backend=auto
+
+
+
+         vllm serve unsloth/gpt-oss-120b
