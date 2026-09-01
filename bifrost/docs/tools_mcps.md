@@ -10,3 +10,7 @@ https://gobifrost.com/docs/how-to-guides/mcp/server-setup/
 
 
 https://github.com/maximhq/bifrost/tree/dev/examples/mcps/temperature
+
+
+
+https://docs.getbifrost.ai/mcp/code-mode

@@ -35,3 +35,8 @@ http://localhost:8080/workspace/prompt-repo?promptId=3cdf5af0-ab23-47c0-86af-bfa
 
 Qwen3.8-4B-Q4_K_M.gguf	Q4_K_M	2.783 GB	Recommended. Best quality/size balance for most users.
 
+
+
+can devin connect to bifrost?
+
+https://docs.devin.ai/cli/essential-commands

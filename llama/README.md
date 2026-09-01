@@ -211,3 +211,6 @@ llama cli -hf Qwen/Qwen2.5-Coder-7B-Instruct-GGUF:Q4_K_M --reasoning off -n 1000
 https://huggingface.co/Qwen/Qwen2.5-Coder-7B-Instruct-GGUF?local-app=llama.cpp
 
 llama cli -hf Qwen/Qwen2.5-Coder-7B-Instruct-GGUF:Q4_K_M --reasoning off -n 1000 --verbose-prompt --single-turn --temp 0.0 -p "give me a docker-compose.yml for redis" 
+
+
+
