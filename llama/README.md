@@ -13,6 +13,18 @@ llama cli -hf Qwen/Qwen2.5-Coder-7B-Instruct-GGUF:Q3_K_M --reasoning off -n 1000
 llama cli -hf Qwen/Qwen2.5-Coder-7B-Instruct-GGUF:Q3_K_M --reasoning off -n 1000 --verbose-prompt --single-turn --temp 0.0 -p "Explain the fibonacci sequence."
 
 
+llama serve --port 8081
+
+llama serve --port 8081 -hf Qwen/Qwen2.5-Coder-7B-Instruct-GGUF:Q3_K_M
+
+
+curl -X POST http://localhost:8080/v1/chat/completions \
+  -H "Content-Type: application/json" \
+  -d '{
+    "model": Qwen/Qwen2.5-Coder-7B-Instruct-GGUF:Q3_K_M",
+    "messages": [{"role": "user", "content": "Hello, Bifrost!"}]
+  }'
+
 
 
 # Windows
@@ -186,3 +198,16 @@ https://github.com/bradAGI/awesome-cli-coding-agents
 
 
 https://github.com/AtomicBot-ai/atomic-agent
+
+
+https://huggingface.co/empero-ai/Qwen3.8-4B-Distill-GGUF?local-app=llama.cpp
+
+llama cli -hf empero-ai/Qwen3.8-4B-Distill-GGUF:Q4_K_M  --reasoning off -n 1000 --verbose-prompt --single-turn --temp 0.0 -p "hi" 
+
+
+llama cli -hf Qwen/Qwen2.5-Coder-7B-Instruct-GGUF:Q4_K_M --reasoning off -n 1000 --verbose-prompt --single-turn --temp 0.0 -p "hi" 
+
+
+https://huggingface.co/Qwen/Qwen2.5-Coder-7B-Instruct-GGUF?local-app=llama.cpp
+
+llama cli -hf Qwen/Qwen2.5-Coder-7B-Instruct-GGUF:Q4_K_M --reasoning off -n 1000 --verbose-prompt --single-turn --temp 0.0 -p "give me a docker-compose.yml for redis" 
