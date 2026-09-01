@@ -1,4 +1,19 @@
 
+$ llama --version
+version: 0.3.0-dev (build 10679, commit 50f068fff)
+built with Clang 22.1.8 for Windows x86_64
+
+
+llama cli -cl
+
+
+llama cli -hf Qwen/Qwen2.5-Coder-7B-Instruct-GGUF:Q3_K_M --reasoning off -n 1000 --verbose-prompt --single-turn --temp 0.0 -p "hi"
+
+
+llama cli -hf Qwen/Qwen2.5-Coder-7B-Instruct-GGUF:Q3_K_M --reasoning off -n 1000 --verbose-prompt --single-turn --temp 0.0 -p "Explain the fibonacci sequence."
+
+
+
 
 # Windows
 https://github.com/ggml-org/llama.cpp/blob/master/docs/docker.md
