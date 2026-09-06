@@ -1,9 +1,3 @@
-https://stackoverflow.com/questions/69027224/the-nvmrc-file-is-not-read
-
-Windows .nvmrc support is limited
-
-
-
 # Setup
 https://docs.getbifrost.ai/quickstart/gateway/setting-up
 

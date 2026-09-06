@@ -1,5 +1,13 @@
 
 
+# Startup
+
+## Llama Server
+https://llama.app/docs/serve
+```
+llama serve --port 8081 -hf Qwen/Qwen2.5-Coder-7B-Instruct-GGUF:Q3_K_M
+```
+
 
 git push -u origin main
 
