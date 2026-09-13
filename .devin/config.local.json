@@ -1,0 +1,11 @@
+{
+  "permissions": {
+    "allow": [
+      "Exec(whoami)",
+      "Exec(ls)",
+      "Exec(find)",
+      "Exec(date)",
+      "Exec(mkdir)"
+    ]
+  }
+}
