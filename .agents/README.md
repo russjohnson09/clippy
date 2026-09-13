@@ -22,6 +22,11 @@ docker compose exec -it ubuntu-basic bash
 curl -fsSL https://cli.devin.ai/install.sh | bash
 ```
 
+Should be setup with volumes so this is only necessary when the volume is destroyed.
+
+lrwxrwxrwx 1 root root 56 Sep 13 19:56 /root/.local/bin/devin -> /root/.local/share/devin/cli/_versions/current/bin/devin
+Restart your shell or run: source /root/.bashrc. Then run devin to get started.
+
 enter the token manually
 
 

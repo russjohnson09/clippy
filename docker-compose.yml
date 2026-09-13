@@ -95,9 +95,11 @@ services:
     #   - serviceName
     # network_mode: host
     
+    # lrwxrwxrwx 1 root root 56 Sep 13 19:56 /root/.local/bin/devin -> /root/.local/share/devin/cli/_versions/current/bin/devin
     volumes:
       - .agents:/data/.agents
-      - ubuntu-local-bin:/root/.local/bin
+      - ./docs:/data/docs
+      - ubuntu-local:/root/.local
       # - ubuntu-local-root:/root
     # Key Points
 # Default Gateway IP: 172.17.0.1
@@ -121,5 +123,5 @@ services:
 
 
 volumes:
-  ubuntu-local-bin:
+  ubuntu-local:
   # ubuntu-local-root:
