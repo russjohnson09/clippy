@@ -1,0 +1,15 @@
+FROM ubuntu:latest
+
+
+# docker compose up --build
+
+RUN apt-get update && apt-get install curl -y
+
+
+# https://cli.devin.ai/install.sh
+# RUN curl -fsSL https://cli.devin.ai/install.sh | bash
+
+
+WORKDIR /data
+
+RUN echo "hi"
