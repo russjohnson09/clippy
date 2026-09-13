@@ -9,8 +9,23 @@ https://agentskills.io/specification
 docker-compose.yml
 
 # Start the llama cpp server on host
+https://discuss.huggingface.co/t/top-local-ai-models-gguf-for-complete-web-app-development-no-coding-for-2026/174336/2
+
+https://www.reddit.com/r/LocalLLaMA/comments/1aegy3v/eli5_whats_the_difference_between_a_chat_llm_and/
+
+Instruct - single turn chat
+
+Chat - multi-turn chat.
+
 ```
+HF_HUB_CACHE=./models llama cli -hf Qwen/Qwen2.5-Coder-1.5B-Instruct-GGUF:Q2_K --reasoning off -n 1000 --verbose-prompt --single-turn --temp 0.0 -p "hi"
+
+HF_HUB_CACHE=./models llama cli -hf ggml-org/Qwen2.5-Coder-1.5B-Q8_0-GGUF:Q8_0 --reasoning off -n 1000 --verbose-prompt --single-turn --temp 0.0 -p "hi"
+
+
+llama cli -hf unsloth/GLM-5.3-Flash-GGUF:UD-Q4_K_XL
 HF_HUB_CACHE=./models llama cli -hf TheBloke/Mistral-7B-Instruct-v0.2-GGUF:Q4_K_M --reasoning off -n 1000 --verbose-prompt --single-turn --temp 0.0 -p "hi"
+
 LLAMA_ARG_PORT=9931 LLAMA_ARG_VERBOSE=1 LLAMA_ARG_HOST=0.0.0.0 HF_HUB_CACHE=./models llama server
 ```
 
