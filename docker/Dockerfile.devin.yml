@@ -5,14 +5,63 @@ FROM ubuntu:latest
 
 RUN apt-get update && apt-get install curl -y
 
+ENV NVM_DIR=/root/.nvm
+ENV NODE_VERSION=24
 
+# The volume I have setup is conflicting with this install?
+# RUN bash -c "source $NVM_DIR/nvm.sh && nvm install $NODE_VERSION"
+# RUN bash -c "source $NVM_DIR/nvm.sh"
+
+
+# ENV PATH="$NVM_DIR/versions/node/v$NODE_VERSION/bin:$PATH"
+
+# RUN node -v
+
+# RUN node -v && npm -v
 # https://cli.devin.ai/install.sh
+
+# install nvm
+
+# install 
+
+
+
+# COPY ./docs /data/docs
+COPY . /data
+
+RUN curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash
+
+# RUN echo $NVM_DIR
+RUN bash -c "source $NVM_DIR/nvm.sh && cd /data && nvm install && nvm use && node -v"
+
+# ENV PATH="$NVM_DIR/versions/node/v$NODE_VERSION/bin:$PATH"
 
 
 WORKDIR /data
+RUN bash -c "source $NVM_DIR/nvm.sh && nvm use && node -v \
+    && npx -y @maximhq/bifrost-cli"
+
+
+ENV PATH="/root/.bifrost/bin:$PATH"
+
+# RUN npm -v
+
+# RUN echo "1"
+# RUN bash -c "source $NVM_DIR/nvm.sh && nvm install && nvm use"
+# ENV PATH="$NVM_DIR/versions/node/v$NODE_VERSION/bin:$PATH"
+# /root/.nvm/versions/node/v24.21.0/bin/node
+# RUN echo "12"
+
+# RUN ls -al $NVM_DIR/versions/node
+
+# RUN nvm install
+# RUN nvm use
 
 # interaction required
 # RUN curl -fsSL https://cli.devin.ai/install.sh | bash
 
+
+
+# WORKDIR /data
 
 RUN echo "hi"
