@@ -97,6 +97,8 @@ services:
     
     volumes:
       - .agents:/data/.agents
+      - ubuntu-local-bin:/root/.local/bin
+      # - ubuntu-local-root:/root
     # Key Points
 # Default Gateway IP: 172.17.0.1
 
@@ -105,3 +107,19 @@ services:
       - "host.docker.internal.gateway:host-gateway"
       # - "host.docker.internal:172.17.0.1"  # Replace with the correct IP if       
       # - "host.docker.internal:172.17.0.2"  # Replace with the correct IP if 
+
+  redis:
+      image: redis:latest
+      # container_name: my-redis
+      ports:
+          - '6379:6379'
+      # volumes:
+      #     - redis-data:/data
+      # environment:
+          # - REDIS_ARGS=--requirepass your_password_here --appendonly yes
+      restart: unless-stopped
+
+
+volumes:
+  ubuntu-local-bin:
+  # ubuntu-local-root:

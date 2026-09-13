@@ -7,9 +7,12 @@ RUN apt-get update && apt-get install curl -y
 
 
 # https://cli.devin.ai/install.sh
-# RUN curl -fsSL https://cli.devin.ai/install.sh | bash
 
 
 WORKDIR /data
+
+# interaction required
+# RUN curl -fsSL https://cli.devin.ai/install.sh | bash
+
 
 RUN echo "hi"
