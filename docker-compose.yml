@@ -1,5 +1,19 @@
 
 
+# install models in use
+# HF_HUB_CACHE=./models llama cli -hf TheBloke/Mistral-7B-Instruct-v0.2-GGUF:Q4_K_M --reasoning off -n 1000 --verbose-prompt --single-turn --temp 0.0 -p "hi"
+
+# https://github.com/ggml-org/llama.cpp/pull/26508
+# LLAMA_ARG_PORT=9931 LLAMA_ARG_VERBOSE=1 LLAMA_ARG_HOST=0.0.0.0 HF_HUB_CACHE=./models llama server
+
+
+# npx http-server
+
+#     By default, serve will listen on 0.0.0.0:3000 and serve the
+    # current working directory on that address.
+# npx serve public
+# curl http://localhost:9931/models
+
 # docker compose build
 
 # docker compose down
@@ -15,18 +29,79 @@ services:
 
 
 
+# HF_HUB_CACHE=./models  llama server -hf TheBloke/Mistral-7B-Instruct-v0.2-GGUF:Q4_K_M
+# HF_HUB_CACHE=./models llama cli -hf TheBloke/Mistral-7B-Instruct-v0.2-GGUF:Q4_K_M
+
+
+# https://huggingface.co/TheBloke/Mistral-7B-Instruct-v0.2-GGUF?local-app=llama.cpp
+# llama cli -cl
+# HF_HUB_CACHE=./models  llama server -hf TheBloke/Mistral-7B-Instruct-v0.2-GGUF:Q4_K_M
+
+
+  # This doesn't work well. I'll just run it locally for now.
+  #  HF_HUB_CACHE=./models  llama server -hf TheBloke/Mistral-7B-Instruct-v0.2-GGUF:Q4_K_M
+  # llama:
+  #   image: ghcr.io/ggml-org/llama.cpp:server
+  #   container_name: llama-server
+  #   ports:
+  #     - "8080:8080"
+  #     # ~/.cache/huggingface/hub
+  #   volumes:
+  #     - ./models:/models
+  #   environment:
+  #     - HF_HUB_CACHE=/models
+  #     - LLAMA_ARG_VERBOSE=1
+  #   # llama serve -hf TheBloke/Mistral-7B-Instruct-v0.2-GGUF:Q4_K_M
+  #     # --model /models/mistral-7b-instruct-v0.2.Q4_K_M.gguf
+  #     #       --ctx-size 4096
+  #     # --threads 8
+  #     #       --host 0.0.0.0
+  #     # --port 8080
+  #   command: >
+  #     -hf TheBloke/Mistral-7B-Instruct-v0.2-GGUF:Q4_K_M
+
+  # ollama:
+  #   image: ollama/ollama
+  #   container_name: ollama
+  #   ports:
+  #     - "11434:11434"
+  #   volumes:
+  #     - ollama:/root/.ollama
+  #   restart: unless-stopped
+
   ubuntu-basic:
-    image: ubuntu:latest
+    # image: ubuntu:latest
     build:
       context: .
       dockerfile: ./docker/Dockerfile.devin.yml
     command: >
       /bin/bash -c "
       echo 1;
+      # curl http://host.docker.internal:9931/models
+
       while true; do
         echo "Running..."
+        # curl http://172.17.0.1:9931/models
+        # curl http://172.17.0.1:3000
+        # curl http://localhost:3000
+        curl http://host.docker.internal.gateway:3000
+        curl http://host.docker.internal.gateway:9931/models
+
+        # curl http://host.docker.internal:3000
         sleep 10  # Pauses for 1 second between iterations
       done
       "
+    # depends_on:
+    #   - serviceName
+    # network_mode: host
+    
     volumes:
       - .agents:/data/.agents
+    # Key Points
+# Default Gateway IP: 172.17.0.1
+
+# https://forums.docker.com/t/how-to-reach-localhost-on-host-from-docker-container/113321
+    extra_hosts:
+      - "host.docker.internal.gateway:host-gateway"
+      # - "host.docker.internal:172.17.0.1"  # Replace with the correct IP if       
+      # - "host.docker.internal:172.17.0.2"  # Replace with the correct IP if 
