@@ -17,7 +17,15 @@ Instruct - single turn chat
 
 Chat - multi-turn chat.
 
+https://insiderllm.com/guides/context-length-exceeded-fix/
+
+request (7663 tokens) exceeds the available context size (4096 tokens), try increasing it
+
+
+
 ```
+HF_HUB_CACHE=./models llama cli -hf unsloth/Qwen3.5-9B-GGUF:Q6_K --reasoning off -n 1000 --verbose-prompt --single-turn --temp 0.0 -p "hi"
+
 HF_HUB_CACHE=./models llama cli -hf Qwen/Qwen2.5-Coder-1.5B-Instruct-GGUF:Q2_K --reasoning off -n 1000 --verbose-prompt --single-turn --temp 0.0 -p "hi"
 
 HF_HUB_CACHE=./models llama cli -hf ggml-org/Qwen2.5-Coder-1.5B-Q8_0-GGUF:Q8_0 --reasoning off -n 1000 --verbose-prompt --single-turn --temp 0.0 -p "hi"
@@ -26,7 +34,7 @@ HF_HUB_CACHE=./models llama cli -hf ggml-org/Qwen2.5-Coder-1.5B-Q8_0-GGUF:Q8_0 -
 llama cli -hf unsloth/GLM-5.3-Flash-GGUF:UD-Q4_K_XL
 HF_HUB_CACHE=./models llama cli -hf TheBloke/Mistral-7B-Instruct-v0.2-GGUF:Q4_K_M --reasoning off -n 1000 --verbose-prompt --single-turn --temp 0.0 -p "hi"
 
-LLAMA_ARG_PORT=9931 LLAMA_ARG_VERBOSE=1 LLAMA_ARG_HOST=0.0.0.0 HF_HUB_CACHE=./models llama server
+LLAMA_ARG_PORT=9931 LLAMA_ARG_VERBOSE=1 LLAMA_ARG_HOST=0.0.0.0 HF_HUB_CACHE=./models llama server --ctx-size 16096
 ```
 
 
