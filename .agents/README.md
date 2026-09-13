@@ -78,6 +78,7 @@ https://docs.getbifrost.ai/quickstart/cli/getting-started
 # Bifrost cli on docker container
 
 ```
+docker compose exec -it ubuntu-basic bash
 
 http://host.docker.internal.gateway:9932
 ```

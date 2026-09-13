@@ -98,6 +98,7 @@ services:
     # lrwxrwxrwx 1 root root 56 Sep 13 19:56 /root/.local/bin/devin -> /root/.local/share/devin/cli/_versions/current/bin/devin
     volumes:
       - .agents:/data/.agents
+      - ./opencode.json:/data/opencode.json
       - .devin:/data/.devin
       - ./docs:/data/docs
       # - ubuntu-local:/root/.local

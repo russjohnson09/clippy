@@ -1,0 +1,16 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  "provider": {
+    "openai": {
+      "name": "Bifrost",
+      "options": {
+        "baseURL": "http://host.docker.internal.gateway:9932/openai",
+        "apiKey": "your-bifrost-key"
+      },
+      "models": {
+        "TheBloke/Mistral-7B-Instruct-v0.2-GGUF:Q4_K_M": {}
+      }
+    }
+  },
+  "model": "TheBloke/Mistral-7B-Instruct-v0.2-GGUF:Q4_K_M"
+}
