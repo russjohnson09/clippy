@@ -100,7 +100,9 @@ services:
       - .agents:/data/.agents
       - .devin:/data/.devin
       - ./docs:/data/docs
-      - ubuntu-local:/root/.local
+      # - ubuntu-local:/root/.local
+      - ubuntu-local-root:/root
+      
       # - ubuntu-local-root:/root
     # Key Points
 # Default Gateway IP: 172.17.0.1
@@ -124,5 +126,5 @@ services:
 
 
 volumes:
-  ubuntu-local:
-  # ubuntu-local-root:
+  # ubuntu-local:
+  ubuntu-local-root:
