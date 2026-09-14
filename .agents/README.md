@@ -27,6 +27,8 @@ request (7663 tokens) exceeds the available context size (4096 tokens), try incr
 
 
 ```
+HF_HUB_CACHE=./models llama cli -hf empero-ai/Qwen3.8-9B-Distill-GGUF:Q4_K_M --reasoning off -n 1000 --verbose-prompt --single-turn --temp 0.0 -p "hi"
+
 HF_HUB_CACHE=./models llama cli -hf unsloth/Qwen3.5-9B-GGUF:UD-IQ2_XXS --reasoning off -n 1000 --verbose-prompt --single-turn --temp 0.0 -p "hi"
 
 HF_HUB_CACHE=./models llama cli -hf unsloth/Qwen3.5-9B-GGUF:Q6_K --reasoning off -n 1000 --verbose-prompt --single-turn --temp 0.0 -p "hi"
@@ -168,6 +170,9 @@ https://opencode.ai/docs/skills/
 
 
 gemini-3.6-flash
+gemini/gemini-3.5-flash-lite
+gemini/gemini-3.8-flash
+
 
 
 https://aistudio.google.com/rate-limit?timeRange=last-7-days
