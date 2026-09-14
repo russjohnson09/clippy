@@ -137,3 +137,18 @@ https://opencode.ai/docs/
 ```
 opencode-ai
 ```
+
+
+
+https://ezz.sh/posts/agent_vs_harness
+
+https://www.philschmid.de/agent-harness-2026
+
+
+https://opencode.ai/docs/skills/ 
+
+
+094] 75.33.178.259 I slot print_timing: id  3 | task 14542 | n_gen =   1971, tg =   4.16 t/s, tg_3s =   4.03 t/s
+[60094] 75.36.332.698 I slot print_timing: id  3 | task 14542 | n_gen =   1983, tg =   4.16 t/s, tg_3s =   3.80 t/s
+116.38.694.019 E srv    operator(): http client error: Connection handling canceled
+[60094] 116.33.776.938 W srv          stop: cancel task, id_task = 14542
