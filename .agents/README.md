@@ -1,6 +1,9 @@
 test
 
 
+docker model run hf.co/Qwen/Qwen2.5-Coder-7B 
+
+
 
 
 https://agentskills.io/specification
@@ -24,6 +27,8 @@ request (7663 tokens) exceeds the available context size (4096 tokens), try incr
 
 
 ```
+HF_HUB_CACHE=./models llama cli -hf unsloth/Qwen3.5-9B-GGUF:UD-IQ2_XXS --reasoning off -n 1000 --verbose-prompt --single-turn --temp 0.0 -p "hi"
+
 HF_HUB_CACHE=./models llama cli -hf unsloth/Qwen3.5-9B-GGUF:Q6_K --reasoning off -n 1000 --verbose-prompt --single-turn --temp 0.0 -p "hi"
 
 HF_HUB_CACHE=./models llama cli -hf Qwen/Qwen2.5-Coder-1.5B-Instruct-GGUF:Q2_K --reasoning off -n 1000 --verbose-prompt --single-turn --temp 0.0 -p "hi"
@@ -33,6 +38,13 @@ HF_HUB_CACHE=./models llama cli -hf ggml-org/Qwen2.5-Coder-1.5B-Q8_0-GGUF:Q8_0 -
 
 llama cli -hf unsloth/GLM-5.3-Flash-GGUF:UD-Q4_K_XL
 HF_HUB_CACHE=./models llama cli -hf TheBloke/Mistral-7B-Instruct-v0.2-GGUF:Q4_K_M --reasoning off -n 1000 --verbose-prompt --single-turn --temp 0.0 -p "hi"
+
+https://github.com/ggml-org/llama.cpp/blob/master/tools/server/README.md
+
+LLAMA_ARG_CTX_SIZE=16096 LLAMA_ARG_REASONING=on LLAMA_ARG_REASONING_EFFORT=auto LLAMA_ARG_PORT=9931 LLAMA_ARG_VERBOSE=1 LLAMA_ARG_HOST=0.0.0.0 HF_HUB_CACHE=./models llama server
+
+LLAMA_ARG_CTX_SIZE=16096 LLAMA_ARG_REASONING=off LLAMA_ARG_REASONING_EFFORT=minimal LLAMA_ARG_PORT=9931 LLAMA_ARG_VERBOSE=1 LLAMA_ARG_HOST=0.0.0.0 HF_HUB_CACHE=./models llama server
+
 
 LLAMA_ARG_PORT=9931 LLAMA_ARG_VERBOSE=1 LLAMA_ARG_HOST=0.0.0.0 HF_HUB_CACHE=./models llama server --ctx-size 16096
 ```
@@ -152,3 +164,16 @@ https://opencode.ai/docs/skills/
 [60094] 75.36.332.698 I slot print_timing: id  3 | task 14542 | n_gen =   1983, tg =   4.16 t/s, tg_3s =   3.80 t/s
 116.38.694.019 E srv    operator(): http client error: Connection handling canceled
 [60094] 116.33.776.938 W srv          stop: cancel task, id_task = 14542
+
+
+
+gemini-3.6-flash
+
+
+https://aistudio.google.com/rate-limit?timeRange=last-7-days
+
+
+gemini is way to hot right now.
+
+
+Gemini 2.5 Flash Lite
